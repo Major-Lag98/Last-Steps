@@ -1,5 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &897152605293335605
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1174960396540265952}
+  - component: {fileID: 8220940638870644095}
+  m_Layer: 0
+  m_Name: MuzzlePos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1174960396540265952
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897152605293335605}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.01932723, y: 0.019327212, z: -0.70684266, w: 0.7068426}
+  m_LocalPosition: {x: -0.0021, y: 0.068, z: 0.4479}
+  m_LocalScale: {x: 0.5877766, y: 0.58777654, z: 0.5877767}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8648931858373826560}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8220940638870644095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897152605293335605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d779746b08279f0438ca04083f266b59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Muzzle: {fileID: 1174960396540265952}
 --- !u!1 &1251923309094319188
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,18 +319,19 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4893822151811445862}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.01932723, y: -0.019327212, z: 0.70684266, w: 0.7068426}
-  m_LocalPosition: {x: -0.09, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -0.12, y: 0, z: 0.09}
   m_LocalScale: {x: 1.7013263, y: 1.7013263, z: 1.7013263}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1174960396540265952}
   - {fileID: 2104008691680183615}
   - {fileID: 681805944838729474}
   - {fileID: 4014412194639492481}
   - {fileID: 8536953661946160428}
   - {fileID: 3997868553221319289}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &5514982923392736391
 GameObject:
   m_ObjectHideFlags: 0

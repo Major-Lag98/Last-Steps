@@ -358,7 +358,7 @@ Transform:
   m_GameObject: {fileID: 4893822151811445862}
   serializedVersion: 2
   m_LocalRotation: {x: -0.01932723, y: -0.019327212, z: 0.70684266, w: 0.7068426}
-  m_LocalPosition: {x: -0.13, y: 0, z: 0}
+  m_LocalPosition: {x: -0.122, y: 0, z: 0.031}
   m_LocalScale: {x: 1.7013263, y: 1.7013263, z: 1.7013263}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -369,6 +369,7 @@ Transform:
   - {fileID: 2434352894911223332}
   - {fileID: 1632930190526274466}
   - {fileID: 3492531234257012}
+  - {fileID: 1938426564524620378}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5587003611738406035
@@ -620,6 +621,51 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &8053315521297770589
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1938426564524620378}
+  - component: {fileID: 3384197242310581972}
+  m_Layer: 0
+  m_Name: MuzzlePos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1938426564524620378
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8053315521297770589}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.01932723, y: 0.019327212, z: -0.70684266, w: 0.7068426}
+  m_LocalPosition: {x: -0, y: 0.0591, z: 0.413}
+  m_LocalScale: {x: 0.5877766, y: 0.58777654, z: 0.5877767}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8648931858373826560}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3384197242310581972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8053315521297770589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d779746b08279f0438ca04083f266b59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Muzzle: {fileID: 1938426564524620378}
 --- !u!1 &8512950842700224230
 GameObject:
   m_ObjectHideFlags: 0

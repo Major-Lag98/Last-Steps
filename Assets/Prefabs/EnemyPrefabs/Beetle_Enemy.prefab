@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79847c6df89c0847ae7be28e8a1f22b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
+  damage: 15
 --- !u!114 &3014354182394147748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  MaxHealth: 5
+  MaxHealth: 20
 --- !u!65 &3083285826277290212
 BoxCollider:
   m_ObjectHideFlags: 0

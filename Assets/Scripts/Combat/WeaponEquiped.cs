@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public class WeaponEquiped : MonoBehaviour
 {
@@ -8,17 +9,35 @@ public class WeaponEquiped : MonoBehaviour
 
     GameObject weaponModel;
     Transform grip;
-    
-    
-    void Start()
+    Transform MuzzleTransform;
+    bool canFire = true;
+
+
+    void SpawnWeapon(ScriptableObject newWeapon)
     {
-        // get the position of the grip
-        
         weaponModel = Instantiate(weapon.GunModel, transform);
+        MuzzleTransform = weaponModel.GetComponentInChildren<MuzzlePos>().Muzzle;
     }
 
-    public Transform MuzzleTransform;
-    bool canFire = true;
+    void DestroyWeapon()
+    {
+        Destroy(weaponModel);
+    }
+
+    public void Swap(ScriptableObject newWeapon)
+    {
+        DestroyWeapon();
+        weapon = (GunScripableObject)newWeapon;
+        SpawnWeapon(newWeapon);
+        
+    }
+
+    void Start()
+    {
+        SpawnWeapon(weapon);
+    }
+
+    
 
     public void FireBullet()
     {
@@ -51,8 +70,13 @@ public class WeaponEquiped : MonoBehaviour
                     float randomY = Random.Range(shot * -10f, shot * 10);
                     bulletRotation *= Quaternion.Euler(0f, randomY, 0f);
 
-                    Instantiate(weapon.Bullet, weaponModel.transform.position, bulletRotation);
+                    Instantiate(weapon.Bullet, MuzzleTransform.position, bulletRotation);
                 }
+
+                // spawn muzzel flash
+                GameObject flash = Instantiate(weapon.MuzzleFlashPrefab, MuzzleTransform.position, MuzzleTransform.rotation);
+                flash.transform.parent = transform;
+                Destroy(flash, 0.25f);
             }
 
 
@@ -66,7 +90,7 @@ public class WeaponEquiped : MonoBehaviour
                 bulletRotation.eulerAngles = new Vector3(0, bulletRotation.eulerAngles.y, 0); // Set Y rotation to parallel to xz plane
 
                 // spawn bullet
-                Instantiate(weapon.Bullet, transform.position, bulletRotation);
+                Instantiate(weapon.Bullet, MuzzleTransform.position, bulletRotation);
 
                 // spawn muzzel flash
                 GameObject flash = Instantiate(weapon.MuzzleFlashPrefab, MuzzleTransform.position, MuzzleTransform.rotation);
@@ -92,7 +116,7 @@ public class WeaponEquiped : MonoBehaviour
         }
     }
     
-
+    
 
     public void EndFireCooldown()
     {

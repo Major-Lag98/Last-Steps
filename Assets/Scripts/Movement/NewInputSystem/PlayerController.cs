@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour
     // public constants
     public float GravityMultiplier = 3f;
     WeaponEquiped PlayerGun;
+    public GunScripableObject[] Inventory;
+    int inventorySlot = 0;
 
     public int health { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
@@ -38,6 +40,16 @@ public class PlayerController : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         PlayerGun = GetComponentInChildren<WeaponEquiped>();
+    }
+
+    public void SwapWeapons(InputAction.CallbackContext context)
+    {
+        if (context.canceled)
+        {
+            inventorySlot = (inventorySlot + 1) % 3;
+            PlayerGun.Swap(Inventory[inventorySlot]);
+            
+        } 
     }
 
     // get WASD input
@@ -198,4 +210,6 @@ public class PlayerController : MonoBehaviour
         characterController.Move(movementDirection * speed * Time.deltaTime);
 
     }
+
+    
 }

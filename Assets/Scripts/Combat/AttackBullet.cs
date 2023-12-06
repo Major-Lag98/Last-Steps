@@ -31,20 +31,15 @@ public class AttackBullet : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        //Debug.Log("Hit somthing");
-        BulletMesh.enabled = false;
-        rb.isKinematic = true;
-        Destroy(gameObject, trailRenderer.time);
-        
-    }
+    
     private void OnTriggerEnter(Collider collision)
     {
-        BulletMesh.enabled = false;
-        rb.isKinematic = true;
-        Destroy(gameObject, trailRenderer.time);
-
+        if (collision.GetComponent<Bullet>() == null)
+        {
+            BulletMesh.enabled = false;
+            rb.isKinematic = true;
+            Destroy(gameObject, trailRenderer.time);
+        }
     }
 
 }

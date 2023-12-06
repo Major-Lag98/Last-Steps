@@ -260,7 +260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  MaxHealth: 7
+  MaxHealth: 15
 --- !u!114 &3047321581742483975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,7 +278,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   raycastDist: 20
-  waitSeconds: 7
+  waitSeconds: 6
   bullet: {fileID: 1270194103951371847, guid: a6970af3b56735b4e9a342795d226652, type: 3}
 --- !u!114 &7299776567944464288
 MonoBehaviour:

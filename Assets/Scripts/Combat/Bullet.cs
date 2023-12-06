@@ -32,7 +32,7 @@ public class Bullet : MonoBehaviour
         {
             Debug.Log("Hit: " + other.gameObject.name);
             BulletMesh.enabled = false;
-            IDamageable damageable = other.GetComponent<IDamageable>();
+            IHealthInteraction damageable = other.GetComponent<IHealthInteraction>();
             if (damageable != null)
             {
                 damageable.TakeDamage(1);

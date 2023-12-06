@@ -611,7 +611,9 @@ MonoBehaviour:
     Right Mouse to aim
 
     Left Mouse to
-    shoot'
+    shoot
+
+    R to change weapons'
 --- !u!222 &730853898
 CanvasRenderer:
   m_ObjectHideFlags: 0
